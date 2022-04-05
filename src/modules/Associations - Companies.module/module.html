@@ -1,0 +1,29 @@
+{# Here we are setting a variable to the primary company associated to the user #}
+{% set primary_company = crm_associations(contact.hs_object_id, "HUBSPOT_DEFINED", 1, "", "name,domain,linkedin_company_page,linkiedinbio,phone,country,twitterhandle").results[0] %}
+{# this next div is hidden but shows output -- for demo/debug purposes only #}
+<div class="hidden-div">{{primary_company}}</div>
+
+{# Show primary company information from 1:1 relationship #}
+<h2>Your Primary Company</h2>
+<div class="primary-company">
+  <h5>{{primary_company.name}} ({{primary_company.country}})</h5>
+  <p>{{primary_company.domain}}<br>{{primary_company.phone}}<br>{{primary_company.linkedin_company_page}}</p>
+</div>
+
+{# Here we are using CRM associations to get ALL the companies associated to the contact (one to many) #}
+{% set associated_companies = crm_associations(contact.hs_object_id, "HUBSPOT_DEFINED", 279, "", "name,domain,linkedin_company_page,linkiedinbio,phone,country,twitterhandle") %} 
+{# this next div is hidden but shows output -- for demo/debug purposes only #}
+<div class="hidden-div">{{associated_companies}}</div>
+
+{# show additional associated companies #}
+<h3>Additional Associated Companies</h3>
+<div class="company-list">
+  {# Here we are looping through the associated companies and excluding the primary associated company using the rejectattr filter #}
+  
+{% for company in associated_companies.results|sort(false,false,"name")|rejectattr("id","eq",primary_company.id) %}
+  <div class="company-item">
+   <h5>{{company.name}} ({{company.country}})</h5>
+    <p>{{company.domain}}</p>
+  </div>
+{% endfor %}
+</div>

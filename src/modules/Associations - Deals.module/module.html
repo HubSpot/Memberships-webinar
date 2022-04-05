@@ -1,0 +1,16 @@
+
+<hr>
+{% set associated_deals = crm_associations(contact.hs_object_id, "HUBSPOT_DEFINED", 4, "limit=3") %} 
+<div class="hidden-div">
+  {{associated_deals}}
+</div>
+<h4 style="margin-top:1rem;">Your Deals</h4>
+<div class="deal-list">
+{% for deal in associated_deals.results %} 
+  <div class="deal-item">
+    <h5>{{deal.dealname}}</h5>
+    <p><strong>Created:</strong> {{deal.createdate}} | <strong>Closed:</strong> {{deal.closedate}}<br><strong>Amount:</strong>{{deal.amount}}</p>  
+  </div>
+{% endfor %}
+</div>
+

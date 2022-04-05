@@ -1,0 +1,16 @@
+.hidden-div {
+  display:none;
+}
+.primary-company {
+  margin: 1em 0;
+}
+.company-item {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.primary-company p, .company-item p {
+  font-size: .75rem; 
+}
