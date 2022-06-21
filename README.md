@@ -1,5 +1,5 @@
-# HubSpot Essentials for Developers: Getting Started with Memberships
-This is an example project created for the [HubSpot Essentials for developers event](https://events.hubspot.com/events/details/hubspot-hubspot-academy-presents-hubspot-essentials-for-developers-getting-started-with-memberships/) - illustrating a simple logged-in experience that can be built on HubSpot websites.
+# Getting started with Memberships
+This is an example project created for the Memberships talk by AJ and Jon McLaren - illustrating a simple logged-in experience that can be built on HubSpot websites.
 
 
 The theme is using the boilerplate and the main files that you should look at are:
