@@ -1,0 +1,46 @@
+{
+    "name": "summer_camp",
+    "labels": {
+      "singular": "Summer Camp",
+      "plural": "Summer Camps"
+    },
+    "primaryDisplayProperty": "name",
+    "secondaryDisplayProperties": [
+       "description"
+  ],
+    "requiredProperties": [
+       "name",
+       "description",
+       "start_date",
+       "end_date"
+    ],
+    "properties": [
+      {
+        "name": "start_date",
+        "label": "Start date",
+        "type": "date",
+        "fieldType": "date"
+      },
+      {
+        "name": "end_date",
+        "label": "End date",
+        "type": "date",
+        "fieldType": "date"
+      },
+      {
+        "name": "name",
+        "label": "Name",
+        "type": "string",
+        "fieldType": "text"
+      },
+      {
+        "name": "description",
+        "label": "Description",
+        "type": "string",
+        "fieldType": "text"
+      }
+    ],
+    "associatedObjects": [
+      "CONTACT"
+    ]
+  }
